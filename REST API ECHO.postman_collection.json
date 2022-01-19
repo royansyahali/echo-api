@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "ef450f58-b7c7-48cd-b42c-73c3c90fb0ea",
+		"name": "REST API ECHO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Catalogues",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model_name\" : \"Models 13\",\r\n    \"image_url\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.wikihow\",\r\n    \"description\" : \"simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:1323/models/create",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Catalogues",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model_name\" : \"Models 9\",\r\n    \"image_url\" : \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.wikihow\",\r\n    \"description\" : \"simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:1323/models/update/9",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"update",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Catalogues",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1323/models/1",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Catalogues",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1323/models/list/",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Catalogues",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1323/models/9",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model_id\" : 7,\r\n    \"schedule_date\" : \"2012-01-05\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:1323/models/schedules/create",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"schedules",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Schedule",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1323/models/schedules/100",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"schedules",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Schedule",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model_id\" : 6,\r\n    \"schedule_date\" : \"2012-01-05\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:1323/models/schedules/6",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"schedules",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Schedule",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:1323/models/schedules/2",
+					"host": [
+						"localhost"
+					],
+					"port": "1323",
+					"path": [
+						"models",
+						"schedules",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
