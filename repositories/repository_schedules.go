@@ -65,6 +65,7 @@ func (repository *SchedulesRepositoryImpl) Delete(c echo.Context, tx *gorm.DB, i
 	if schedule.Id == 0 {
 		return errors.New("record not found in database")
 	}
+
 	tx.Where("id = ?", id).Delete(&model.Schedules{})
 	return nil
 }
