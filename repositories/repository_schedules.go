@@ -33,7 +33,10 @@ func (repository *SchedulesRepositoryImpl) Create(c echo.Context, tx *gorm.DB, s
 func (repository *SchedulesRepositoryImpl) Find(c echo.Context, tx *gorm.DB, id int) ([]model.SchedulesResponse, error) {
 	schedule := model.SchedulesResponse{}
 	sch := []model.SchedulesResponse{}
-	rows, err := tx.Raw("SELECT id, model_id, schedule_date FROM schedules WHERE model_id = ?", id).Rows()
+	// rows, err := tx.Raw("SELECT id, model_id, schedule_date FROM schedules WHERE model_id = ?", id).Rows()
+	rows, err := tx.Table("catalogues").Select(`schedules.id,schedules.model_id, schedules.schedule_date`).Joins("right join schedules on schedules.model_id = catalogues.id").
+		Where("schedules.deleted_at IS NULL").Where("catalogues.deleted_at IS NULL").Where("catalogues.id = ?", id).Order("schedules.id asc").Rows()
+
 	if err != nil {
 		return sch, err
 	}
